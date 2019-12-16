@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <property name="pattern_console">%relative %-5level %logger{2} - %msg%n</property>
+        <property name="pattern_file">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{5} - %msg%n</property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern_console}"/>
+        </Console>
+        <File name="FileFirst" fileName="d:/JAVA/Study/travelling-data//logs/travelling/text.log" bufferedIO="true">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="Log_Console" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="Log_File" level="debug" additivity="false">
+            <AppenderRef ref="FileFirst"/>
+        </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console" level="DEBUG"/>
+            <AppenderRef ref="FileFirst" level="DEBUG"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
