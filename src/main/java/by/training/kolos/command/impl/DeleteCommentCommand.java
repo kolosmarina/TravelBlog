@@ -13,9 +13,17 @@ import org.apache.logging.log4j.Logger;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по удалению авторизированным пользователем собственного комментария
+ *
+ * @author Колос Марина
+ */
 public class DeleteCommentCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

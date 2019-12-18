@@ -11,16 +11,41 @@ import java.util.regex.Pattern;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс используется для валидации полученных данных от клиента
+ *
+ * @author Колос Марина
+ */
 public final class InputDataValidation {
-    private static Logger logger = LogManager.getLogger();
-
+    private static final Logger logger = LogManager.getLogger();
+    /**
+     * Паттерн для email: состоит из латинских букв, цифр, знака подчеркивания, точки, тире, @ («собака»)
+     */
     private static final Pattern EMAIL_PATTERN = Pattern.compile("(^[\\w-]+\\.)*[\\w-]+@[\\w-]+(\\.[\\w-]+)*\\.[a-zA-Z]{2,6}");
+    /**
+     * Паттерн для пароля: состоит не менее чем из 5 и не более чем из 25 символов,
+     * включает цифры, латинские буквы и знак подчеркивания,
+     * содержит хотя бы одно число, одну латинскую букву в нижнем регистре и одну латинскую букву в верхнем регистре
+     */
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[\\w]{5,25}$");
+    /**
+     * Паттерн для nickname: начинается с латинской буквы,
+     * состоит не менее чем из 5 и не более чем из 20 символов,
+     * включает цифры, латинские буквы и знак подчеркивания
+     */
     private static final Pattern NICKNAME_PATTERN = Pattern.compile("^[A-Za-z][\\w]{4,20}$");
 
     private InputDataValidation() {
     }
 
+    /**
+     * Метод для валидации полученных данных от клиента до соединения с базой данных
+     * Добавление атрибутов (сообщений об ошибках) в объект {@link SessionRequestContent} при невалидном значении
+     * данных для отображения клиенту в response
+     *
+     * @param content содержит всю информацию из request от клиента
+     * @return true, если все введенные данные прошли валидацию успешно
+     */
     public static boolean inputValidationForAuthentication(SessionRequestContent content) {
         boolean validationResult = true;
         if (!InputDataValidation.isValidEmail(content.getRequestParameter(PARAM_EMAIL)[0])) {
@@ -36,6 +61,9 @@ public final class InputDataValidation {
         return validationResult;
     }
 
+    /**
+     * @see #inputValidationForAuthentication(SessionRequestContent)
+     */
     public static boolean inputValidationForRegistration(SessionRequestContent content) {
         boolean validationResult = true;
         if (!InputDataValidation.isValidEmail(content.getRequestParameter(PARAM_EMAIL)[0])) {

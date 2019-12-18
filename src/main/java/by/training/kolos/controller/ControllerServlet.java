@@ -17,6 +17,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Класс для получения запросов от клиента и отправки ответов
+ *
+ * @author Колос Марина
+ */
 @WebServlet("/travelling")
 public class ControllerServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();

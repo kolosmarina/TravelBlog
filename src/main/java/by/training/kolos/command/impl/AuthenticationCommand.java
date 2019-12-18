@@ -15,9 +15,17 @@ import org.apache.logging.log4j.Logger;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по аутентификации пользователя в системе
+ *
+ * @author Колос Марина
+ */
 public class AuthenticationCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;
@@ -39,7 +47,7 @@ public class AuthenticationCommand implements AbstractCommand {
                 content.setDirection(SessionRequestContent.Direction.FORWARD);
                 content.setRequestAttribute(PARAM_LOGIN_OR_PASSWORD_ERROR,
                         MessageManager.getProperty(MESSAGE_LOGIN_OR_PASSWORD_INCORRECT));
-                logger.log(Level.DEBUG, "User is not exist");
+                logger.log(Level.DEBUG, "User entered invalid data");
             }
         } catch (ServiceException e) {
             page = String.format("%s?%s=%s", ConfigurationManager.getProperty(MAIN_SERVLET), PARAM_COMMAND,

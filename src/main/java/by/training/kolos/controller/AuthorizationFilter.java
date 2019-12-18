@@ -17,6 +17,12 @@ import java.io.IOException;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для авторизации пользователя и ограничение доступа к ресурсу в случае изменения статуса
+ * авторизированного пользователя в системе на заблокирован
+ *
+ * @author Колос Марина
+ */
 @WebFilter(urlPatterns = {"/travelling"})
 public class AuthorizationFilter implements Filter {
     private static final Logger logger = LogManager.getLogger();

@@ -2,6 +2,11 @@ package by.training.kolos.command;
 
 import by.training.kolos.command.impl.*;
 
+/**
+ * Enum содержащит команды для обработки запросов
+ *
+ * @author Колос Марина
+ */
 public enum CommandType {
     OPEN_MAIN_PAGE {
         {

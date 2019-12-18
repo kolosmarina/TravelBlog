@@ -1,5 +1,10 @@
 package by.training.kolos.command;
 
+/**
+ * Класс для хранения констант приложения
+ *
+ * @author Колос Марина
+ */
 public final class ApplicationConstants {
 
     private ApplicationConstants() {
@@ -77,7 +82,6 @@ public final class ApplicationConstants {
     public static final String PARAM_LOGIN_OR_PASSWORD_ERROR = "loginOrPasswordError";
     public static final String PARAM_EMPTY_POST_NAME = "emptyPostName";
     public static final String PARAM_EMPTY_FILES = "emptyFiles";
-
 
     public static final String PAGE_INDEX = "path.page.index";
     public static final String PAGE_MAIN = "path.page.main";

@@ -11,9 +11,18 @@ import org.apache.logging.log4j.Logger;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по установке заглавного фото для нового собственного поста
+ * авторизированным пользователем
+ *
+ * @author Колос Марина
+ */
 public class SetMainPhotoCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

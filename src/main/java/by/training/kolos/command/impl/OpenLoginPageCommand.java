@@ -8,9 +8,17 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Класс для выполнения запроса по получению доступа к странице логирования в системе
+ *
+ * @author Колос Марина
+ */
 public class OpenLoginPageCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

@@ -27,6 +27,11 @@ import java.util.stream.Collectors;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для получения запроса на сохранение нового поста и формирование ответа
+ *
+ * @author Колос Марина
+ */
 
 @WebServlet("/upload")
 @MultipartConfig

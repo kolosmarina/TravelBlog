@@ -6,7 +6,15 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс для создания объектов, содержащих информацию из запроса
+ *
+ * @author Колос Марина
+ */
 public class SessionRequestContent {
+    /**
+     * Для получения из запроса адреса предыдущей страницы
+     */
     private static final String SPECIAL_HEADER_NAME_FOR_PREVIOUS_PAGE = "Referer";
 
     public enum Direction {
@@ -99,6 +107,9 @@ public class SessionRequestContent {
         isInvalidated = true;
     }
 
+    /**
+     * Метод по обновлению запроса от клиента с учетом выполненных команд в системе
+     */
     public void updateRequest(HttpServletRequest req) {
         reqAttributes.forEach(req::setAttribute);
         sessionAttributes.forEach(req.getSession()::setAttribute);

@@ -14,9 +14,18 @@ import org.apache.logging.log4j.Logger;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по блокировке/разблокировке аккаунта пользователя
+ * администратором
+ *
+ * @author Колос Марина
+ */
 public class ChangeUserStatusCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

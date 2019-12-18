@@ -27,8 +27,8 @@ INSERT INTO traveller (role, email, password, nickname, registration_date, is_ac
 VALUES ('ADMIN', 'newadmin@gmail.com', '4d54497a4e44553d', 'admin', 1535831575000, true),
        ('USER', 'somename@somesubdomain.travel', '4d54497a4e44553d', 'sky_man', 1544464800000, true),
        ('USER', 'info.info@mail.ru', '4d54497a4e44553d', 'sunny_hamster', 1550655000000, true),
-       ('USER', 'supertraveler@gmail.com', '4d54497a4e445532', 'super_traveler', 1557757800000, true),
-       ('USER', 'seawave@gmail.com', '4d54497a4e445532', 'sea_wave', 1559563200000, true);
+       ('USER', 'supertraveler@gmail.com', '4d54497a4e44553d', 'super_traveler', 1557757800000, true),
+       ('USER', 'seawave@gmail.com', '4d54497a4e44553d', 'sea_wave', 1559563200000, true);
 
 CREATE TABLE post
 (

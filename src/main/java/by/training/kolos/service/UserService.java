@@ -5,6 +5,11 @@ import by.training.kolos.exception.ServiceException;
 
 import java.util.List;
 
+/**
+ * Интерфейс для обработки запросов, связанных с пользователем
+ *
+ * @author Колос Марина
+ */
 public interface UserService {
 
     List<User> findAll() throws ServiceException;

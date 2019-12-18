@@ -16,9 +16,17 @@ import java.time.Instant;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по сохранению нового комментария авторизированным пользователем
+ *
+ * @author Колос Марина
+ */
 public class SaveCommentCommand implements AbstractCommand {
     private static Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

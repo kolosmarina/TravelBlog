@@ -13,12 +13,22 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
+/**
+ * Класс для выполнения запроса по получению доступа к главной странице системы
+ *
+ * @author Колос Марина
+ */
 public class OpenMainPageCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
-
+    /**
+     * количество постов (главных фото) одновременно отображаемых на странице
+     */
     private static final int postsNumberLimit = 3;
     private static final int postsNumberOffset = 0;
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

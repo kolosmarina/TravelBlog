@@ -8,6 +8,11 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 import java.io.IOException;
 
+/**
+ * Класс для создания собственных тегов
+ *
+ * @author Колос Марина
+ */
 public class FooterTag extends BodyTagSupport {
     private static Logger logger = LogManager.getLogger();
 

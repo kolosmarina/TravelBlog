@@ -5,6 +5,12 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
+/**
+ * Класс для создания соединений-оберток на соединениями для контроля возможности создания
+ * своих собственных соединений
+ *
+ * @author Колос Марина
+ */
 public class ProxyConnection implements Connection {
     private Connection connection;
 
@@ -12,6 +18,9 @@ public class ProxyConnection implements Connection {
         this.connection = connection;
     }
 
+    /**
+     * Метод по возврату соединения в пул
+     */
     @Override
     public void close() throws SQLException {
         if (!this.getAutoCommit()) {

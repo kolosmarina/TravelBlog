@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Класс для установки локали по умолчанию при первом обращении к системе
+ *
+ * @author Колос Марина
+ */
 @WebFilter(urlPatterns = {"/index.jsp"},
         initParams = {@WebInitParam(name = "locale", value = "ru_RU", description = "Locale Param")})
 public class LocaleFilter implements Filter {

@@ -79,4 +79,4 @@ Use-Case диаграмма системы расположена по пути 
 4) отредактировать файл, расположенный по пути <project root>/src/main/resources/applicationTest.properties
 (данные указать для работы с тестовой базой данных)
 5) собрать проект с помощью maven: mvn clean package
-6) архив, расположенный по пути <project root>/target/travel_blog.war скопировать в tomcat в папку webapps и запустить tomcat
+6) архив, расположенный по пути <project root>/target/travel_blog.war скопировать в tomcat в папку webapps и запустить tomcatgit add .

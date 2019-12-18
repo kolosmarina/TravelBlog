@@ -79,8 +79,9 @@
                         <option value="${tag.value}">${tag.value}</option>
                     </c:forEach>
                 </select>
-                <input type="text" id="newTag:${i}"><input type="button" onclick="addTag(${i})"
-                                                           value="<fmt:message key="button.addTag"/>"><br>
+                    <%--ДЛЯ ЗАГРУЗКИ СОБСТВЕННЫХ ТЕГОВ--%>
+                <input type="text" id="newTag:${i}">
+                <input type="button" onclick="addTag(${i})" value="<fmt:message key="button.addTag"/>"><br>
                 <input type="hidden" id="tags-input:${i}" name="tags-input:${i}"/>
             </label>
             <h6 id="tags:${i}"></h6>

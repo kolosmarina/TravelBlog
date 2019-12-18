@@ -13,12 +13,26 @@ import java.util.List;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по получению доступа к страницы для созданию нового поста
+ * авторизированным пользователем
+ *
+ * @author Колос Марина
+ */
 public class OpenNewPostPageCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
-
-    private static final int tagsNumberOffset = 8;
+    /**
+     * количество тегов доступных на странице для выбора
+     */
+    private static final int tagsNumberLimit = 8;
+    /**
+     * количество форм на странице для загрузки фото
+     */
     private static final int photosNumberAvailableForUpload = 3;
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;
@@ -36,7 +50,7 @@ public class OpenNewPostPageCommand implements AbstractCommand {
                 : null;
 
         try {
-            List<Tag> tags = ServiceFactory.getTagService().findPopularTagsByWorldPart(tagsNumberOffset, worldPart);
+            List<Tag> tags = ServiceFactory.getTagService().findPopularTagsByWorldPart(tagsNumberLimit, worldPart);
             //to display a message to the user when creating a post without the necessary data
             content.setRequestAttribute(PARAM_EMPTY_POST_NAME, paramEmptyPostName);
             content.setRequestAttribute(PARAM_EMPTY_FILES, paramEmptyFileForDownload);

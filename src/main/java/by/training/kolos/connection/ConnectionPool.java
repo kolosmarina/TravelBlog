@@ -15,6 +15,11 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Класс для создания пула соединений с базой данных
+ *
+ * @author Колос Марина
+ */
 public final class ConnectionPool {
     private static final Logger logger = LogManager.getLogger();
 

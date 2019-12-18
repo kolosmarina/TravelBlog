@@ -1,7 +1,6 @@
 package by.training.kolos.command.impl;
 
 import by.training.kolos.command.AbstractCommand;
-import by.training.kolos.command.ApplicationConstants;
 import by.training.kolos.command.InputDataValidation;
 import by.training.kolos.command.PasswordSecurity;
 import by.training.kolos.config.ConfigurationManager;
@@ -28,6 +27,12 @@ import java.util.stream.Stream;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по регистрации нового пользователя
+ * с отправкой письма об успешной регистрации на email нового пользователя
+ *
+ * @author Колос Марина
+ */
 public class RegistrationCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
@@ -49,6 +54,9 @@ public class RegistrationCommand implements AbstractCommand {
         SMTP_PASSWORD = collect.get(1).trim();
     }
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

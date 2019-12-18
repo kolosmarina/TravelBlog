@@ -17,9 +17,18 @@ import java.util.stream.Collectors;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по авторизации пользователя в системе
+ * (получение доступа к странице администратора)
+ *
+ * @author Колос Марина
+ */
 public class AdministrationCommand implements AbstractCommand {
     private static final Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

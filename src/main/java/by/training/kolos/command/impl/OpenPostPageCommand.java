@@ -14,11 +14,21 @@ import java.util.List;
 
 import static by.training.kolos.command.ApplicationConstants.*;
 
+/**
+ * Класс для выполнения запроса по доступу к странице поста
+ *
+ * @author Колос Марина
+ */
 public class OpenPostPageCommand implements AbstractCommand {
     private static Logger logger = LogManager.getLogger();
-
+    /**
+     * Количество фото одновременно отображаемых на странице
+     */
     private static final int photosNumberLimit = 3;
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

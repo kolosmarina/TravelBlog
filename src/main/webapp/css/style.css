@@ -34,3 +34,8 @@ header .nav-item {
     font-weight: bold;
     font-size: 120%;
 }
+
+.customSmall {
+    color: red;
+    font-weight: bold;
+}

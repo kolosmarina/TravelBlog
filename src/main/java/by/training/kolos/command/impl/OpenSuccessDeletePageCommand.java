@@ -8,9 +8,18 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Класс для выполнения запроса об успешном удалении собственного поста
+ * авторизированным пользователем
+ *
+ * @author Колос Марина
+ */
 public class OpenSuccessDeletePageCommand implements AbstractCommand {
     private static Logger logger = LogManager.getLogger();
 
+    /**
+     * @see AbstractCommand#execute(SessionRequestContent)
+     */
     @Override
     public String execute(SessionRequestContent content) {
         String page;

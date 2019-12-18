@@ -17,6 +17,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Класс для загрузки и отображения фото
+ *
+ * @author Колос Марина
+ */
 @WebServlet("/images")
 public class ImagesServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger();
